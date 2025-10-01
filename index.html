@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80x15 Brilliant Button Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>80x15 Brilliant Button Maker</h1>
+            <p>Create your own <strong>Antipixel Buttons</strong> (also known as "Badges") in seconds!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls">
+                <div class="section">
+                    <h2>Left Box</h2>
+                    <div class="form-group">
+                        <label for="leftText">Text:</label>
+                        <input type="text" id="leftText" value="RSS" maxlength="32">
+                    </div>
+                    <div class="form-group">
+                        <label for="leftTextColor">Text color:</label>
+                        <input type="color" id="leftTextColor" value="#FFFFFF">
+                        <input type="text" id="leftTextColorHex" value="FFFFFF" maxlength="6" class="hex-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="leftBgColor">Background color:</label>
+                        <input type="color" id="leftBgColor" value="#FF6600">
+                        <input type="text" id="leftBgColorHex" value="FF6600" maxlength="6" class="hex-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="leftTextPos">Text start:</label>
+                        <input type="number" id="leftTextPos" value="5" min="0" max="80">
+                        <span class="unit">pixels from the left</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Right Box</h2>
+                    <div class="form-group">
+                        <label for="rightText">Text:</label>
+                        <input type="text" id="rightText" value="VALID" maxlength="32">
+                    </div>
+                    <div class="form-group">
+                        <label for="rightTextColor">Text color:</label>
+                        <input type="color" id="rightTextColor" value="#FFFFFF">
+                        <input type="text" id="rightTextColorHex" value="FFFFFF" maxlength="6" class="hex-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="rightBgColor">Background color:</label>
+                        <input type="color" id="rightBgColor" value="#888880">
+                        <input type="text" id="rightBgColorHex" value="888880" maxlength="6" class="hex-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="rightTextPos">Text start:</label>
+                        <input type="number" id="rightTextPos" value="4" min="0" max="80">
+                        <span class="unit">pixels from the bar</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Borders</h2>
+                    <div class="form-group">
+                        <label for="outerBorder">Outer border:</label>
+                        <input type="color" id="outerBorder" value="#666666">
+                        <input type="text" id="outerBorderHex" value="666666" maxlength="6" class="hex-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="innerBorder">Inner border:</label>
+                        <input type="color" id="innerBorder" value="#ffffff">
+                        <input type="text" id="innerBorderHex" value="ffffff" maxlength="6" class="hex-input">
+                    </div>
+                    <div class="form-group" id="barPositionGroup">
+                        <label for="barPosition">Bar position:</label>
+                        <input type="number" id="barPosition" value="25" min="0" max="80">
+                        <span class="unit">pixels from the left</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Presets & Options</h2>
+                    <div class="form-group preset-row">
+                        <label>Presets:</label>
+                        <div id="presetSwatches" class="preset-swatches" aria-label="Preset color swatches"></div>
+                    </div>
+                    <div class="form-group" style="flex-direction: column; align-items: flex-start;">
+                        <label for="advancedMode">
+                            <input type="checkbox" id="advancedMode">
+                            Auto-fit width to text
+                        </label>
+                        <p class="help-text">Dynamically adjusts button width to fit longer text</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <h2>Your Brilliant Button:</h2>
+
+                <div class="size-section">
+                    <h3>Original Size (80x15)</h3>
+                    <div class="preview-container">
+                        <canvas id="buttonCanvas1x" width="80" height="15"></canvas>
+                    </div>
+                </div>
+
+                <div class="size-section">
+                    <h3>Double Size (160x30)</h3>
+                    <div class="preview-container">
+                        <canvas id="buttonCanvas2x" width="160" height="30"></canvas>
+                    </div>
+                </div>
+
+                <div class="size-section">
+                    <h3>Quadruple Size (320x60)</h3>
+                    <div class="preview-container">
+                        <canvas id="buttonCanvas4x" width="320" height="60"></canvas>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="downloadBtn1x" class="btn-primary">💾 Download 1x (80x15)</button>
+                    <button id="downloadBtn2x" class="btn-primary">💾 Download 2x (160x30)</button>
+                    <button id="downloadBtn4x" class="btn-primary">💾 Download 4x (320x60)</button>
+                    <button id="copyDataUrlBtn" class="btn-secondary">📋 Copy Data URL (1x)</button>
+                </div>
+                <div class="info">
+                    <p>Right-click any button and choose "Save image as..." or use the download buttons.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Based on the original <a href="https://hob.syndamia.com/brilliant-button-maker/" target="_blank">Brilliant Button Maker</a> by Luca Zappa</p>
+            <p>Client-side implementation using HTML5 Canvas</p>
+            <p>Vibe-coded with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="silkscreen-font.js?v=2"></script>
+    <script src="button-maker.js?v=8"></script>
+</body>
+</html>

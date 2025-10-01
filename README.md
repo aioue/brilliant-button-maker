@@ -93,19 +93,15 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 ## Credits
 
 - Luca Zappa - Original Brilliant Button Maker
-- Bill Zeller - PHP button generation script
-- Silkscreen font character mapping
+- Bill Zeller - [PHP button generation script](https://web.archive.org/web/20080623232547/http://www.cowpimp.com/ButtonMaker/button.txt)
+- [Silkscreen](https://kottke.org/plus/type/silkscreen/) font character mapping
 
 ## References
 
-Font:
-https://kottke.org/plus/type/silkscreen/
-
 Generator references:
-https://hob.syndamia.com/brilliant-button-maker/
-http://www.acasystems.com/en/button-maker/
+- https://hob.syndamia.com/brilliant-button-maker/
+- http://www.acasystems.com/en/button-maker/
 
 # Button Examples
-
-https://web.badges.world/
-https://microbuttons.wordpress.com/
+- https://web.badges.world/
+- https://microbuttons.wordpress.com/
